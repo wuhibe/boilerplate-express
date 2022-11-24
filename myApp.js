@@ -1,6 +1,9 @@
-let express = require('express');
+let express = require("express");
 let app = express();
 
+app.route("/").get(function (req, res) {
+  console.log("Hello World");
+});
 
 
 
@@ -8,32 +11,4 @@ let app = express();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+module.exports = app;
