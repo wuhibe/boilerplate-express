@@ -10,7 +10,9 @@ app.use(function (req, res, next) {
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
-
+app.get('/:word/echo', (req, res) => {
+  res.json({echo: req.params.word});
+});
 app.get('/now', function(req, res, next) {
   req.time = new Date().toString();
   next();
