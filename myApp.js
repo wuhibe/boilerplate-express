@@ -7,6 +7,13 @@ app.use(function (req, res, next) {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
+app.get('/name', (req, res) => {
+    res.json({name: `${req.query.first} ${req.query.last}`})
+});
+app.post('/name', (req, res) => {
+    res.json({name: `${req.query.first} ${req.query.last}`})
+});
+
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
